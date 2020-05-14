@@ -124,9 +124,11 @@ namespace Visitare
                 List<int> idList = new List<int>();
                 foreach (Points tmp in routePoints)
                 {
+                    var token1 = Application.Current.Properties["MyToken"].ToString();
                     var json = JsonConvert.SerializeObject(tmp);
                     var content = new StringContent(json, Encoding.UTF8, "application/json");
                     HttpClient client = new HttpClient();
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token1);
                     var result = await client.PostAsync("http://dearjean.ddns.net:44301/api/Points3", content);
                     var pointResult = JsonConvert.DeserializeObject<Points>(result.Content.ReadAsStringAsync().Result);
                     if (result.StatusCode != HttpStatusCode.Created)
@@ -154,7 +156,8 @@ namespace Visitare
                     await DisplayAlert("Sukces", "Dodanie trasy przebiegło pomyślnie", "Ok");
                 else
                     await DisplayAlert("Błąd", "Spróbuj ponownie później", "Ok");
-            }catch(Exception xd)
+            }
+            catch(Exception xd)
             {
 
                 await DisplayAlert("Uwaga!", "Nie masz odpowiednich uprawnień na kreatora! Skontaktuj się z administratorem", "Anuluj");
