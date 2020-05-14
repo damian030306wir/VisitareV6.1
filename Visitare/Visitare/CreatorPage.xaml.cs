@@ -159,8 +159,7 @@ namespace Visitare
 
                 await DisplayAlert("Uwaga!", "Nie masz odpowiednich uprawnień na kreatora! Skontaktuj się z administratorem", "Anuluj");
             }
-
-        }
+       }
         private async void OnMyRoutesClicked(object sender, EventArgs e)
         {
             try
