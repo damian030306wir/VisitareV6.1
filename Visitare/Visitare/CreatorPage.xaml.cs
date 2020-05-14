@@ -155,7 +155,7 @@ namespace Visitare
                 if (result2.StatusCode == HttpStatusCode.OK)
                     await DisplayAlert("Sukces", "Dodanie trasy przebiegło pomyślnie", "Ok");
                 else
-                    await DisplayAlert("Błąd", "Spróbuj ponownie później", "Ok");
+                    await DisplayAlert("Błąd", "Nie masz odpowiednich uprawnień na kreatora! Skontaktuj się z administratorem", "Ok");
             }
             catch(Exception xd)
             {
