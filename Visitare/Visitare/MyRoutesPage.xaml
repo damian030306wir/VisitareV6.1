@@ -24,19 +24,20 @@
                         <ViewCell>
                             <StackLayout Orientation="Vertical">
                                 <StackLayout Orientation="Horizontal">
-                                    <Label Text="{Binding Name}"
-                                   TextColor="Black"
-                                   HorizontalTextAlignment="Center"
-                                   FontAttributes="Bold" 
-                                   FontSize="20"
-                                   Margin="20,10,20,10"/>
-                                    <Label Text="{Binding Description}"
-                                   TextColor="Black"
-                                   HorizontalTextAlignment="Center"
-                                   VerticalTextAlignment="Center"
-                                   FontAttributes="Italic" 
-                                   FontSize="10"
-                                   Margin="10"/>
+                                    <Label Text="{Binding Name}" TextColor="Black"
+                                           FontAttributes="Bold" FontSize="20"
+                                           HorizontalTextAlignment="Center"
+                                           Margin="20,10,20,10"/>
+                                    <Label Text="{Binding Description}" TextColor="Black"
+                                           HorizontalTextAlignment="Center"
+                                           VerticalTextAlignment="Center"
+                                           FontAttributes="Italic" FontSize="10"
+                                           Margin="10"/>
+                                    <Button TextColor="Red" FontAttributes="Bold" FontSize="Medium"
+                                            HorizontalOptions="EndAndExpand"
+                                            Clicked="OnXClicked"
+                                            
+                                    />
                                 </StackLayout>
                             </StackLayout>
                         </ViewCell>

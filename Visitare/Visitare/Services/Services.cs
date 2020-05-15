@@ -16,7 +16,7 @@ namespace Visitare.Services
 
             string URL = "http://dearjean.ddns.net:44301/Token";
             var accessToken = string.Empty;
-            await Task.Run(() =>
+            await Task.Run( () =>
             {
                 try
                 {
@@ -52,7 +52,6 @@ namespace Visitare.Services
                
                 catch (Exception ex)
                 {
-
                 }
             });
             return accessToken;

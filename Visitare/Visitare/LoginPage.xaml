@@ -19,11 +19,11 @@
             <Entry x:Name="password" Placeholder="Hasło" FontSize="20" IsPassword="True" PlaceholderColor="LightGray" 
                    WidthRequest="300" HorizontalTextAlignment="Center"/>
             <Button Text="Zaloguj" CornerRadius="23" BackgroundColor="#439299" Margin="10" FontAttributes="Bold"
-                    Clicked="OnLog" TextColor="Black"   />
+                    Clicked="OnLog" TextColor="Black" BorderWidth="2" BorderColor="Black"  />
             <Button Text="Zaloguj z Google" CornerRadius="23" BackgroundColor="#439299" Margin="10" FontAttributes="Bold"
-                    Clicked="OnGoogleClicked" TextColor="Black"/>
+                    Clicked="OnGoogleClicked" TextColor="Black" BorderWidth="2" BorderColor="Black"/>
             <Button Text="Rejestracja" CornerRadius="23" BackgroundColor="#439299" Margin="10" FontAttributes="Bold"
-                    Clicked="Register" TextColor="Black"/>
+                    Clicked="Register" TextColor="Black" BorderWidth="2" BorderColor="Black"/>
             
         </StackLayout>
     </ContentPage.Content>
