@@ -5,22 +5,24 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              BackgroundColor="#FDDA8A"
+             BackgroundImageSource="tlo.jpg"
              x:Class="Visitare.LoginPage">
-
+             
     <NavigationPage.TitleView>
         <Label Text="Logowanie" TextColor="White" FontSize="Title" Margin="20,0"/>
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout Padding="40,80,40,0">
-            <Entry x:Name="login" Placeholder="Login" FontSize="20" PlaceholderColor="Gray"
+            <Image Margin="20,-80,20,0" Source="Visitare.png"/>
+            <Entry x:Name="login" Placeholder="Login" FontSize="20" PlaceholderColor="LightGray"
                    WidthRequest="300" HorizontalTextAlignment="Center"/>
-            <Entry x:Name="password" Placeholder="Hasło" FontSize="20" IsPassword="True" PlaceholderColor="Gray" 
+            <Entry x:Name="password" Placeholder="Hasło" FontSize="20" IsPassword="True" PlaceholderColor="LightGray" 
                    WidthRequest="300" HorizontalTextAlignment="Center"/>
-            <Button Text="Zaloguj" CornerRadius="23" BackgroundColor="#439299" Margin="15" FontAttributes="Bold"
-                    Clicked="OnLog" TextColor="Black" />
-            <Button Text="Zaloguj z Google" CornerRadius="23" BackgroundColor="#439299" Margin="15" FontAttributes="Bold"
+            <Button Text="Zaloguj" CornerRadius="23" BackgroundColor="#439299" Margin="10" FontAttributes="Bold"
+                    Clicked="OnLog" TextColor="Black"   />
+            <Button Text="Zaloguj z Google" CornerRadius="23" BackgroundColor="#439299" Margin="10" FontAttributes="Bold"
                     Clicked="OnGoogleClicked" TextColor="Black"/>
-            <Button Text="Rejestracja" CornerRadius="23" BackgroundColor="#439299" Margin="15" FontAttributes="Bold"
+            <Button Text="Rejestracja" CornerRadius="23" BackgroundColor="#439299" Margin="10" FontAttributes="Bold"
                     Clicked="Register" TextColor="Black"/>
             
         </StackLayout>
