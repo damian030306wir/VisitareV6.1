@@ -80,25 +80,6 @@ namespace Visitare
                 await DisplayAlert("Uwaga!", "Można do trasy dodać maksymalnie 10 punktów", "Ok");
                 customMap.Pins.Remove(pin);
             }
-           
-            /*var json = JsonConvert.SerializeObject(new Points()
-            {
-                X = e.Position.Latitude,
-                Y = e.Position.Longitude,
-                RouteId = 1,
-                Name = nazwaEntry.Text,
-                Description = opisEntry.Text
-            });
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
-            HttpClient client = new HttpClient();
-            var result = await client.PostAsync("http://dearjean.ddns.net:44301/api/Points3", content);
-            if (result.StatusCode == HttpStatusCode.Created)
-            {
-                await DisplayAlert("Komunikat", "Dodanie puntku przebiegło pomyślnie", "Ok");
-            }
-            else
-                await DisplayAlert("Błąd", "Spróbuj ponownie później", "Ok");*/
-
         }
         private async void OnNewRouteClicked(object sender, EventArgs e)
         {
@@ -118,7 +99,6 @@ namespace Visitare
                 return;
             }
 
-
             try
             {
                 List<int> idList = new List<int>();
@@ -134,7 +114,6 @@ namespace Visitare
                     if (result.StatusCode != HttpStatusCode.Created)
                     {
                         await DisplayAlert("Błąd", "Spróbuj ponownie później", "Ok");
-                        Debug.WriteLine(result);
                         return;
                     }
                     idList.Add(pointResult.Id);
@@ -155,7 +134,7 @@ namespace Visitare
                 if (result2.StatusCode == HttpStatusCode.OK)
                     await DisplayAlert("Sukces", "Dodanie trasy przebiegło pomyślnie", "Ok");
                 else
-                    await DisplayAlert("Błąd", "Nie masz odpowiednich uprawnień na kreatora! Skontaktuj się z administratorem", "Ok");
+                    await DisplayAlert("Błąd", "Nie masz odpowiednich uprawnień na kreatora! Skontaktuj się z administratorem", "Anuluj");
             }
             catch(Exception xd)
             {

@@ -18,7 +18,8 @@
                 ItemTapped="OnTapped"
                 SelectionMode="None"
                 ItemsSource="{Binding Routes}"
-                SeparatorColor="#90B320">
+                SeparatorColor="#90B320"
+                HasUnevenRows="True">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

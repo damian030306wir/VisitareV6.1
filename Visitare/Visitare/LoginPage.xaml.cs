@@ -33,15 +33,12 @@ namespace Visitare
         private async void OnLog(object sender, EventArgs e)
         {
             var response = await _service.LoginAsync(login.Text, password.Text);
-
-            if (!string.IsNullOrEmpty(response))
-               await Navigation.PushAsync(new MainPage());
-                
-            
-            else
+            if(response == "1")
+                await DisplayAlert("Brak połączenia", "Przekroczono czas przeznaczony na połączenie", "OK");
+            else if(string.IsNullOrEmpty(response))
                 await DisplayAlert("Błędne dane", "Spróbuj ponownie", "OK");
-            
-
+            else
+                await Navigation.PushAsync(new MainPage());
         }
 
         private void OnGoogleClicked(object sender, EventArgs e)

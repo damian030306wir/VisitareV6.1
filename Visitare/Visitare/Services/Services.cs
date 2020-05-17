@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,10 +33,8 @@ namespace Visitare.Services
                     request.Content = new FormUrlEncodedContent(keyValues);
 
                     var client = new HttpClient();
+                    client.Timeout = TimeSpan.FromSeconds(7);
                     var response = client.SendAsync(request).Result;
-
-                    if (!response.IsSuccessStatusCode)
-                        return;
 
                     using (HttpContent content = response.Content)
                     {
@@ -49,9 +48,9 @@ namespace Visitare.Services
                         Application.Current.Properties["MyToken"] = $"{accessToken}";
                     }
                 }
-               
                 catch (Exception ex)
                 {
+                    accessToken = "1";
                 }
             });
             return accessToken;

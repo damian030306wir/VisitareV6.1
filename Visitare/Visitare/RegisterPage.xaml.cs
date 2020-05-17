@@ -31,7 +31,7 @@ namespace Visitare
             var client = new HttpClient();
             var model = new RegisterModel
             {
-                Email = email.Text,
+                Nickname = email.Text,
                 Password = password.Text,
                 ConfirmPassword = cpassword.Text
             };

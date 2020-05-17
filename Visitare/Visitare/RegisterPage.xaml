@@ -11,7 +11,7 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout Padding="40,80,40,0">
-            <Entry x:Name="email" Placeholder="Email" FontSize="20" PlaceholderColor="Gray"
+            <Entry x:Name="email" Placeholder="Login" FontSize="20" PlaceholderColor="Gray"
                    WidthRequest="300" HorizontalTextAlignment="Center"/>
             <Entry x:Name="password" Placeholder="Hasło" FontSize="20" IsPassword="True" PlaceholderColor="Gray" 
                    WidthRequest="300" HorizontalTextAlignment="Center"/>
