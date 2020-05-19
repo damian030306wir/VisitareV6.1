@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -112,8 +113,19 @@ namespace Visitare
          var questionPage = sender as QuestionPage;
          await DisplayAlert("", "Człowiek odpowiedział: " + (questionPage.Result ? "dobrze" : "źle"), "OK");
             if (questionPage.Result)
+            {
                 pointsManager.Points += 1;
 
+
+                var token = Application.Current.Properties["MyToken"].ToString();
+
+                HttpClient client = new HttpClient();
+
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
+                var response = await client.GetStringAsync("http://dearjean.ddns.net:44301/api/Rewards/Get15");
+
+            }
 
         }
 
