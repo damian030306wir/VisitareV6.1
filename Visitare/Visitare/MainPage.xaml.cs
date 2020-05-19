@@ -113,11 +113,18 @@ namespace Visitare
                             var content = new StringContent(json, Encoding.UTF8, "application/json");
                             HttpClient client = new HttpClient();
                             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                            var result = await client.GetAsync("http://dearjean.ddns.net:44301/api/VisitedPoints/Check/" + $"{tmp.Id}");
-                            result = await client.PostAsync("http://dearjean.ddns.net:44301/api/VisitedPoints/Add/"+$"{tmp.Id}", content);
-                           
-
-                            await DisplayAlert("Sukces", "Otrzymujesz punkty za odwiedzenie tego miejsca!", "Ok");
+                            var result = await client.GetStringAsync("http://dearjean.ddns.net:44301/api/VisitedPoints/Check/" + $"{tmp.Id}");
+                            var check = JsonConvert.DeserializeObject<bool>(result);
+                            if(check)
+                            {
+                                await DisplayAlert("Odwiedzono", "Już odwiedziłeś to miejsce!", "Ok");
+                            }
+                            else 
+                            {
+                                var result2 = await client.PostAsync("http://dearjean.ddns.net:44301/api/VisitedPoints/Add/" + $"{tmp.Id}", content);
+                                await DisplayAlert("Sukces", "Otrzymujesz punkty za odwiedzenie tego miejsca!", "Ok");
+                                
+                            }
                             return;
                         }
                     }
