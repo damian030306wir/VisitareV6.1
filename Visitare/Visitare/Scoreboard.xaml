@@ -21,7 +21,7 @@
                 </Grid>
 
             </StackLayout>
-            <ListView x:Name="scoreBoard" SeparatorColor="#90B320">
+            <ListView Margin="0,0,0,-100" x:Name="scoreBoard" SeparatorColor="#90B320">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
