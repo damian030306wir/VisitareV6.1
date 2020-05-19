@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Maps;
 using Xamarin.Essentials;
+using System.Net.Http.Headers;
 
 namespace Visitare
 {
@@ -107,6 +108,15 @@ namespace Visitare
                     {
                         if (Location.CalculateDistance(tmp.X, tmp.Y, location, DistanceUnits.Kilometers) <= 0.05)
                         {
+                            var token = Application.Current.Properties["MyToken"].ToString();
+                            var json = JsonConvert.SerializeObject(tmp);
+                            var content = new StringContent(json, Encoding.UTF8, "application/json");
+                            HttpClient client = new HttpClient();
+                            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                            var result = await client.GetAsync("http://dearjean.ddns.net:44301/api/VisitedPoints/Check/" + $"{tmp.Id}");
+                            result = await client.PostAsync("http://dearjean.ddns.net:44301/api/VisitedPoints/Add/"+$"{tmp.Id}", content);
+                           
+
                             await DisplayAlert("Sukces", "Otrzymujesz punkty za odwiedzenie tego miejsca!", "Ok");
                             return;
                         }
