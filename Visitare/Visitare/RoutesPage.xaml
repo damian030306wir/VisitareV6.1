@@ -12,7 +12,15 @@
     <ContentPage.Content>
         <StackLayout>
             <SearchBar x:Name="SearchRoutes" TextChanged="MethodSearchRoutes" HeightRequest="50"></SearchBar>
-            <ListView x:Name="routesList"
+            <StackLayout>
+
+                <Grid Padding="0" Margin="15">
+                    <Label Text="Trasa:" VerticalOptions="Center" Grid.Column="0" FontSize = "Medium" TextColor="Red"/>
+                    <Label  Text="Opis trasy:" VerticalOptions="Center" Grid.Column="1" FontSize = "Medium" TextColor="Red"/>
+                </Grid>
+
+            </StackLayout>
+            <ListView Margin="0,0,0,-100" x:Name="routesList"
                 HorizontalOptions="Center"  
                 VerticalOptions="Center"
                 ItemTapped="OnTapped"
