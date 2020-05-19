@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
-
+using Visitare.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +15,7 @@ namespace Visitare
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RoutesPage : ContentPage
     {
+        public List<Routes> trasy;
         public RoutesPage()
         {
             InitializeComponent();
@@ -59,6 +60,15 @@ namespace Visitare
                 }
             }
             await Navigation.PushAsync(new MainPage(new RoutePoints(list)));
+
+        }
+
+        private void OnQuizClicked(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            var route = button?.BindingContext as Routes;
+            
+
 
         }
     }

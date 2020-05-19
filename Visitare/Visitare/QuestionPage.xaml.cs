@@ -100,7 +100,7 @@ namespace Visitare
             });
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             HttpClient client = new HttpClient();
-            var result = await client.PostAsync("http://dearjean.ddns.net:44301/api/Test4", content);
+            var result = await client.PostAsync("http://dearjean.ddns.net:44301/api/AnswerAndQuestion2", content);
             }
             catch (Exception ex)
             {

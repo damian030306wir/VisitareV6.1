@@ -113,7 +113,7 @@ namespace Visitare
                     var pointResult = JsonConvert.DeserializeObject<Points>(result.Content.ReadAsStringAsync().Result);
                     if (result.StatusCode != HttpStatusCode.Created)
                     {
-                        await DisplayAlert("Błąd", "Spróbuj ponownie później", "Ok");
+                        await DisplayAlert("Błąd", "Nie masz odpowiednich uprawnień na kreatora! Skontaktuj się z administratorem", "Anuluj");
                         return;
                     }
                     idList.Add(pointResult.Id);
