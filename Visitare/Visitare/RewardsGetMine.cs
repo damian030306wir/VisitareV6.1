@@ -4,16 +4,10 @@ using System.Text;
 
 namespace Visitare
 {
-    public class RewardsGetALL
+    public class RewardsGetMine
     {
         public string Nickname { get; set; }
         public string Id { get; set; }
-        public int Points { get; set; }
-
         public int Punkty { get; set; }
-
-        
-
-
     }
 }

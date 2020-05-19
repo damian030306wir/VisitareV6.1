@@ -8,7 +8,8 @@
             
              mc:Ignorable="d"
             
-             x:Class="Visitare.QuestionPage">
+             x:Class="Visitare.QuestionPage"
+             BackgroundColor="#FDDA8A">
     
 
     <StackLayout>
@@ -54,6 +55,8 @@
    
 
     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Twoje punkty" 
+                        Activated="TwojePunkty"/>
         <ToolbarItem Text="Tablica Wyników" 
                         Activated="TablicaWynikow"/>
 

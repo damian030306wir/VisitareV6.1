@@ -122,10 +122,10 @@ namespace Visitare
            await Navigation.PushAsync(new Scoreboard());
         }
 
-        private void odpowiedzPrawidlowa_Completed(object sender, EventArgs e)
+        private async void TwojePunkty(object sender, EventArgs e)
         {
-
+            await Navigation.PushAsync(new MyScore());
         }
-      
+
     }
 }

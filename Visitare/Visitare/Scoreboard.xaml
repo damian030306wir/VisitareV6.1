@@ -4,22 +4,34 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Visitare.Scoreboard">
+             x:Class="Visitare.Scoreboard"
+              BackgroundColor="#FDDA8A">
+
+    <NavigationPage.TitleView>
+        <Label Text="Tablica wyników" TextColor="White" FontSize="Title" Margin="10,0"/>
+    </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="TABLICA WYNIKÓW"
-               Font="Large" HorizontalOptions="Center" Margin="0,25,0,0"/>
            
-            <ListView x:Name="scoreBoard">
+            <StackLayout>
+
+                <Grid Padding="0">
+                    <Label Margin="10,0,10,0" Text="Nick:" VerticalOptions="Center" Grid.Column="0" FontSize = "Medium" TextColor="Red"/>
+                    <Label Margin="10,0,10,0" Text="Punkty:" VerticalOptions="Center" Grid.Column="1" FontSize = "Medium" TextColor="Red"/>
+                </Grid>
+
+            </StackLayout>
+            <ListView x:Name="scoreBoard" SeparatorColor="#90B320">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
                             <Frame Padding="0">
                                 <Grid Padding="0">
 
-                                    <Label Margin="10,0,10,0" Text="{Binding Email}" VerticalOptions="Center" Grid.Column="0"/>
-                                    <Label Margin="10,0,10,0" Text="{Binding Points}" VerticalOptions="Center" Grid.Column="1"/>
-                                   
+                                    <Label Margin="10,0,10,0" Text="{Binding Nickname}" VerticalOptions="Center" Grid.Column="0"/>
+                                    <Label Margin="10,0,10,0" Text="{Binding Punkty}" VerticalOptions="Center" Grid.Column="1"/>
+
+
 
                                 </Grid>
                             </Frame>
