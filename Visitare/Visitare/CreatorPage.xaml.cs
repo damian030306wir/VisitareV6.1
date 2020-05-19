@@ -43,7 +43,7 @@ namespace Visitare
                 await DisplayAlert("Błąd", "Podaj nazwę punktu", "Ok");
                 return;
             }
-            if (customMap.Pins.Count > 10 || routePoints.Count > 10)
+            if (customMap.Pins.Count > 9 || routePoints.Count > 9)
             {
                 await DisplayAlert("Uwaga!", "Można do trasy dodać maksymalnie 10 punktów", "Ok");
                 return;
