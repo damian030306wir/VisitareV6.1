@@ -75,8 +75,7 @@ namespace Visitare
         }
         private async void OnLogOut(object sender, EventArgs e)
         {
-            Navigation.InsertPageBefore(new LoginPage(), this);
-            await Navigation.PopAsync();
+            await Navigation.PopToRootAsync();
         }
         private async void OnProfileClicked(object sender, EventArgs e)
         {
