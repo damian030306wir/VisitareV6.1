@@ -63,13 +63,27 @@ namespace Visitare
 
         }
 
-        private void OnQuizClicked(object sender, EventArgs e)
+        private async void OnQuizClicked(object sender, EventArgs e)
         {
-            var button = sender as Button;
-            var route = button?.BindingContext as Routes;
+             var button = sender as ImageButton;
+             var route = button?.BindingContext as Routes;
             
+            var token = Application.Current.Properties["MyToken"].ToString();
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            var response = await client.GetStringAsync("http://dearjean.ddns.net:44301/api/AnswerAndQuestion2");
+            List<Question> punkty = JsonConvert.DeserializeObject<List<Question>>(response);
+            List<Question> list = new List<Question>();
+            foreach (Question tmp in punkty)
+            {
+                if (tmp.RouteId == route.Id)
+                {
+                    list.Add(tmp);
+                }
+            }
 
 
+            await Navigation.PushAsync(new UserQuestionPage());
         }
     }
 }

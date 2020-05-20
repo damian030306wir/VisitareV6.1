@@ -37,8 +37,16 @@
                         <ViewCell>
                             <StackLayout Orientation="Vertical">
                                 <StackLayout Orientation="Horizontal">
+                                    <Label Text="Nr." TextColor="Black"
+                                           FontAttributes="Bold" FontSize="15"
+                                           HorizontalTextAlignment="Center"
+                                           Margin="5,10,20,10"/>
+                                    <Label Text="{Binding Id}" TextColor="Black"
+                                           FontAttributes="Bold" FontSize="15"
+                                           HorizontalTextAlignment="Center"
+                                           Margin="-25,10,0,0"/>
                                     <Label Text="{Binding Name}" TextColor="Black"
-                                           FontAttributes="Bold" FontSize="20"
+                                           FontAttributes="Bold" FontSize="15"
                                            HorizontalTextAlignment="Center"
                                            Margin="20,10,20,10"/>
                                     <Label Text="{Binding Description}" TextColor="Black"

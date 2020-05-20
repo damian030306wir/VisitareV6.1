@@ -21,6 +21,7 @@ namespace Visitare
 
         private readonly UserQuiz pointsManager;
 
+
         public bool Result { get; set; }
 
         public QuestionPage(Question question)
@@ -91,13 +92,14 @@ namespace Visitare
 
             await Navigation.PushModalAsync(questionPage);
 
-            var json = JsonConvert.SerializeObject(new
-            {
-                Answers = new List<string> {
+                var json = JsonConvert.SerializeObject(new
+                {
+                    Answers = new List<string> {
                 odpowiedzEntry1.Text, odpowiedzEntry2.Text, odpowiedzEntry3.Text, odpowiedzEntry4.Text },
-                GoodAnswer = Convert.ToInt16(odpowiedzPrawidlowa.Text),
-                Question1 = zagadkaEntry.Text
-            });
+                    GoodAnswer = Convert.ToInt16(odpowiedzPrawidlowa.Text),
+                    Question1 = zagadkaEntry.Text,
+                    RouteId = Convert.ToInt16(numerTrasy.Text)
+                });
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             HttpClient client = new HttpClient();
             var result = await client.PostAsync("http://dearjean.ddns.net:44301/api/AnswerAndQuestion2", content);

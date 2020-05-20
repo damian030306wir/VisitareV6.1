@@ -31,6 +31,7 @@
                 </EventTrigger>
             </Entry.Triggers>
         </Entry>
+        <Entry x:Name="numerTrasy" Text="" Placeholder="Numer trasy: " FontSize="Small" ClearButtonVisibility="WhileEditing"/>
 
 
 

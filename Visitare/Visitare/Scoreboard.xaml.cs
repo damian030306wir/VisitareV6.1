@@ -16,6 +16,8 @@ namespace Visitare
     public partial class Scoreboard : ContentPage
     {
         Services.Services _service = new Services.Services();
+
+        public List<RewardsGetALL> punkty;
         public Scoreboard()
         {
             InitializeComponent();
@@ -34,7 +36,9 @@ namespace Visitare
 
             var tablicaW = JsonConvert.DeserializeObject<List<RewardsGetALL>>(response);
 
-            scoreBoard.ItemsSource = tablicaW;
+            scoreBoard.ItemsSource = tablicaW.OrderByDescending(p => p.Punkty);
+
+
 
 
         } 
