@@ -97,7 +97,14 @@ namespace Visitare
         {
             await Navigation.PushAsync(new CreatorPage());
         }
-
+        private async void MyScore(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MyScore());
+        }
+        private async void Rank(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Scoreboard());
+        }
         private async void OnHereClicked(object sender, EventArgs e)
         {
             try
@@ -125,8 +132,15 @@ namespace Visitare
                             else 
                             {
                                 var result2 = await client.PostAsync("http://dearjean.ddns.net:44301/api/VisitedPoints/Add/" + $"{tmp.Id}", content);
-                                await DisplayAlert("Sukces", "Otrzymujesz punkty za odwiedzenie tego miejsca!", "Ok");
                                 
+                                var token1 = Application.Current.Properties["MyToken"].ToString();
+
+                                HttpClient client1 = new HttpClient();
+
+                                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token1);
+
+                                var response = await client.GetStringAsync("http://dearjean.ddns.net:44301/api/Rewards/Get50");
+                                await DisplayAlert("Sukces", "Otrzymujesz 50 punktów ekstra za odwiedzenie tego miejsca!", "Ok");
                             }
                             return;
                         }

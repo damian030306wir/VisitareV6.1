@@ -12,13 +12,17 @@
     </NavigationPage.TitleView>
     <ScrollView>
         <StackLayout Orientation="Vertical">
-            <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="15" Margin="8,8,8,0">
-                <ImageButton Source="blankProfile.png" CornerRadius="25" HeightRequest="50" WidthRequest="50" 
+            <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="15" Margin="5,8,8,0">
+                <ImageButton Source="blankProfile.png" CornerRadius="25" HeightRequest="10" WidthRequest="45" 
                      Aspect="Fill" Clicked="OnProfileClicked" HorizontalOptions="End"/>
                 <Button Text="Jestem tutaj!" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
-                Clicked="OnHereClicked" CornerRadius="18" TextColor="Black" WidthRequest="200"/>
-                <Button Text="Wyloguj" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
-                Clicked="OnLogOut" CornerRadius="18" TextColor="Black"/>
+                Clicked="OnHereClicked" CornerRadius="18" TextColor="Black" WidthRequest="77"/>
+                <Button Text="Moje punkty" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
+                Clicked="MyScore" CornerRadius="18" TextColor="Black" WidthRequest="79"/>
+                <Button Text="Rank" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
+                Clicked="Rank" CornerRadius="18" TextColor="Black" WidthRequest="61"/>
+                <Button Text="Log Out" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
+                Clicked="OnLogOut" CornerRadius="18" TextColor="Black" WidthRequest="61"/>
             </StackLayout>
             <StackLayout HeightRequest="450">
                 <local:CustomMap x:Name="customMap" Margin="2" IsShowingUser="true">
