@@ -28,7 +28,10 @@ namespace Visitare
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             var response = await client.GetStringAsync("http://dearjean.ddns.net:44301/api/Routes");
             var trasy = JsonConvert.DeserializeObject<List<Routes>>(response);
+            routesList.BeginRefresh();
             routesList.ItemsSource = trasy;
+            routesList.EndRefresh();
+
         }
         private async void MethodSearchRoutes(object sender, TextChangedEventArgs e)
         {
@@ -42,6 +45,7 @@ namespace Visitare
             var keyword = SearchRoutes.Text;
             var result = trasy.Where(x => x.Name.ToLower().Contains(keyword.ToLower()));
             routesList.ItemsSource = result;
+          
         }
         private async void OnTapped(object sender, ItemTappedEventArgs e)
         {
