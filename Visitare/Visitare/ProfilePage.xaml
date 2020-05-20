@@ -10,11 +10,14 @@
         <Label Text="Profil" TextColor="White" FontSize="Title" Margin="20,0"/>
     </NavigationPage.TitleView>
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center" Margin="10">
-            <ImageButton Source="blankProfile.png" CornerRadius="50" WidthRequest="100" HeightRequest="100" 
+        <ScrollView>
+            <StackLayout HorizontalOptions="Center" Margin="10">
+                <ImageButton Source="blankProfile.png" CornerRadius="50" WidthRequest="100" HeightRequest="100" 
                     x:Name="avatar" Aspect="AspectFill"/>
-            <Button Text="Zmień" WidthRequest="40" HeightRequest="40" TextColor="Black"
+                <Button Text="Zmień" WidthRequest="40" HeightRequest="40" TextColor="Black"
                     Clicked="OnPickPhotoButtonClicked" />
-        </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        
     </ContentPage.Content>
 </ContentPage>

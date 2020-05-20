@@ -4,57 +4,41 @@
              xmlns:local="clr-namespace:Visitare;assembly=Visitare"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-            
-            
-             mc:Ignorable="d"
-            
+             mc:Ignorable="d"          
              x:Class="Visitare.QuestionPage"
              BackgroundColor="#FDDA8A">
-    
-
-    <StackLayout>
+    <ScrollView>
         <StackLayout>
-            <Label x:Name="punkty" Text="ZDOBYTE PUNKTY" BackgroundColor="#be8feb" TextColor="Black" FontAttributes="Bold"  HorizontalOptions="Center" />
-            <Label x:Name="label1" Text="{Binding Points}" HorizontalOptions="Center"  />
-        </StackLayout>
 
-
-        <Entry x:Name="zagadkaEntry" Text="" Placeholder="Zagadka/pytanie do obiektu:" FontSize="Small" ClearButtonVisibility="WhileEditing" />
-        <Entry x:Name="odpowiedzEntry1" Text="" Placeholder="Oczekiwana odpowiedź 1:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
-        <Entry x:Name="odpowiedzEntry2" Text="" Placeholder="Oczekiwana odpowiedź 2:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
-        <Entry x:Name="odpowiedzEntry3" Text="" Placeholder="Oczekiwana odpowiedź 3:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
-        <Entry x:Name="odpowiedzEntry4" Text="" Placeholder="Oczekiwana odpowiedź 4:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
-        <Entry Completed="myEntry" Keyboard= "Numeric" x:Name="odpowiedzPrawidlowa" Text="" Placeholder="Prawidlowa odpowiedz(0 to odpowiedz 1 itd.)" FontSize="Small" MaxLength="1" >
-            <Entry.Triggers>
-                <EventTrigger Event="TextChanged">
-                    <local:NumericValidationTriggerAction />
-                </EventTrigger>
-            </Entry.Triggers>
-        </Entry>
-        <Entry x:Name="numerTrasy" Text="" Placeholder="Numer trasy: " FontSize="Small" ClearButtonVisibility="WhileEditing"/>
-
-
-
-        <Button x:Name="button" Text="Wciśnij aby rozpocząć quiz" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
+            <StackLayout>
+                <Label x:Name="punkty" Text="ZDOBYTE PUNKTY" BackgroundColor="#be8feb" TextColor="Black" FontAttributes="Bold"  HorizontalOptions="Center" />
+                <Label x:Name="label1" Text="{Binding Points}" HorizontalOptions="Center"  />
+            </StackLayout>
+            <Entry x:Name="zagadkaEntry" Text="" Placeholder="Zagadka/pytanie do obiektu:" FontSize="Small" ClearButtonVisibility="WhileEditing" />
+            <Entry x:Name="odpowiedzEntry1" Text="" Placeholder="Oczekiwana odpowiedź 1:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
+            <Entry x:Name="odpowiedzEntry2" Text="" Placeholder="Oczekiwana odpowiedź 2:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
+            <Entry x:Name="odpowiedzEntry3" Text="" Placeholder="Oczekiwana odpowiedź 3:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
+            <Entry x:Name="odpowiedzEntry4" Text="" Placeholder="Oczekiwana odpowiedź 4:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
+            <Entry Completed="myEntry" Keyboard= "Numeric" x:Name="odpowiedzPrawidlowa" Text="" Placeholder="Prawidlowa odpowiedz(0 to odpowiedz 1 itd.)" FontSize="Small" MaxLength="1" >
+                <Entry.Triggers>
+                    <EventTrigger Event="TextChanged">
+                        <local:NumericValidationTriggerAction />
+                    </EventTrigger>
+                </Entry.Triggers>
+            </Entry>
+            <Entry x:Name="numerTrasy" Text="" Placeholder="Numer trasy: " FontSize="Small" ClearButtonVisibility="WhileEditing"/>
+            <Button x:Name="button" Text="Wciśnij aby rozpocząć quiz" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
                 Margin="0,15" Clicked="Button_Clicked" CornerRadius="25" TextColor="Black">
+            </Button>
+            <StackLayout>
+                <Label Text="{Binding Question1}" TextColor="Black" Margin="10,0"/>
+            </StackLayout>
+            <ListView ItemsSource="{Binding Answers}" ItemTapped="ListView_ItemTapped"  Margin="10,0">
 
-            
-
-
-        </Button>
-
-        <StackLayout>
-            <Label Text="{Binding Question1}" TextColor="Black" Margin="10,0"/>
+            </ListView>
         </StackLayout>
-
-        <ListView ItemsSource="{Binding Answers}" ItemTapped="ListView_ItemTapped"  Margin="10,0">
-            
-        </ListView>
-
-    </StackLayout>
-
-   
-
+    </ScrollView>
+    
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Twoje punkty" 
                         Activated="TwojePunkty"/>

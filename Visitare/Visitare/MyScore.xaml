@@ -11,30 +11,24 @@
     <NavigationPage.TitleView>
         <Label Text="Zdobyte punkty" TextColor="White" FontSize="Title" Margin="10,0"/>
     </NavigationPage.TitleView>
-  
-    <StackLayout>
+    <ScrollView>
         <StackLayout>
-            
+            <StackLayout>
                 <Grid Padding="0">
-                <Label Margin="10,0,10,0" Text="Nick:" VerticalOptions="Center" Grid.Column="0" FontSize = "Large" TextColor="Red"/>
-                <Label Margin="10,0,10,0" Text="Punkty:" VerticalOptions="Center" Grid.Column="1" FontSize = "Large" TextColor="Red"/>
+                    <Label Margin="10,0,10,0" Text="Nick:" VerticalOptions="Center" Grid.Column="0" FontSize = "Large" TextColor="Red"/>
+                    <Label Margin="10,0,10,0" Text="Punkty:" VerticalOptions="Center" Grid.Column="1" FontSize = "Large" TextColor="Red"/>
                 </Grid>
-            
-        </StackLayout>
-        
+            </StackLayout>
             <Frame Padding="0">
                 <Grid Padding="0">
-
-                <Label Margin="10,0,10,0" Text="{Binding Nickname}" VerticalOptions="Center" Grid.Column="0" FontSize = "Large"/>
-                <Label Margin="10,0,10,0" Text="{Binding Punkty}" VerticalOptions="Center" Grid.Column="1" FontSize = "Large"/>
-
-
-
+                    <Label Margin="10,0,10,0" Text="{Binding Nickname}" VerticalOptions="Center" Grid.Column="0" FontSize = "Large"/>
+                    <Label Margin="10,0,10,0" Text="{Binding Punkty}" VerticalOptions="Center" Grid.Column="1" FontSize = "Large"/>
                 </Grid>
             </Frame>
-        
-
-    </StackLayout>
+        </StackLayout>
+    </ScrollView>
+  
+    
 
                
 
