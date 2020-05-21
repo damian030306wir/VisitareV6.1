@@ -127,7 +127,7 @@ namespace Visitare
                             var check = JsonConvert.DeserializeObject<bool>(result);
                             if(check)
                             {
-                                await DisplayAlert("Odwiedzono", "Już odwiedziłeś to miejsce!", "Ok");
+                                await DisplayAlert("Odwiedzono", "To miejsce zostało już odwiedzone!", "Ok");
                             }
                             else 
                             {

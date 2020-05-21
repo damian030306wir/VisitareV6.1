@@ -18,8 +18,12 @@ namespace Visitare
         
         public UserQuestionPage()
         {
+            
             InitializeComponent();
+            
         }
-    
+
+      
+
     }
 }

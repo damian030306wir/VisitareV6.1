@@ -113,7 +113,7 @@ namespace Visitare
        private async void QuestionPageClosed(object sender, EventArgs e)
        {
          var questionPage = sender as QuestionPage;
-         await DisplayAlert("", "Człowiek odpowiedział: " + (questionPage.Result ? "dobrze" : "źle"), "OK");
+         await DisplayAlert("", "Poprawna odpowiedź: " + (questionPage.Result ? "dobrze" : "źle"), "OK");
             if (questionPage.Result)
             {
                 pointsManager.Points += 1;

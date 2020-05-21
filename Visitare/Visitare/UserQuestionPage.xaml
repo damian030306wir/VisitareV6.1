@@ -7,7 +7,7 @@
              x:Class="Visitare.UserQuestionPage">
     <ContentPage.Content>
         <ScrollView>
-           
+            
         </ScrollView>
         
     </ContentPage.Content>
