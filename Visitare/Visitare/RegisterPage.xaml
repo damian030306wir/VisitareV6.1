@@ -5,20 +5,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              BackgroundColor="#FDDA8A"
-             x:Class="Visitare.RegisterPage">
+             x:Class="Visitare.RegisterPage"
+             BackgroundImageSource="tlo.jpg">
     <NavigationPage.TitleView>
         <Label Text="Rejestracja" TextColor="White" FontSize="Title" Margin="20,0"/>
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Padding="40,80,40,0">
-                <Entry x:Name="login" Placeholder="Nazwa użytkownika" FontSize="20" PlaceholderColor="Gray"
+                <Entry x:Name="login" Placeholder="Nazwa użytkownika" FontSize="20" PlaceholderColor="LightGray"
                    WidthRequest="300" HorizontalTextAlignment="Center"/>
-                <Entry x:Name="email" Placeholder="Email" FontSize="20" PlaceholderColor="Gray"
+                <Entry x:Name="email" Placeholder="Email" FontSize="20" PlaceholderColor="LightGray"
                    WidthRequest="300" HorizontalTextAlignment="Center"/>
-                <Entry x:Name="password" Placeholder="Hasło" FontSize="20" IsPassword="True" PlaceholderColor="Gray" 
+                <Entry x:Name="password" Placeholder="Hasło" FontSize="20" IsPassword="True" PlaceholderColor="LightGray" 
                    WidthRequest="300" HorizontalTextAlignment="Center"/>
-                <Entry x:Name="cpassword" Placeholder="Powtórz Hasło" FontSize="20" IsPassword="True" PlaceholderColor="Gray" 
+                <Entry x:Name="cpassword" Placeholder="Powtórz Hasło" FontSize="20" IsPassword="True" PlaceholderColor="LightGray" 
                    WidthRequest="300" HorizontalTextAlignment="Center"/>
                 <Button Text="Zarejestruj" CornerRadius="23" BackgroundColor="#439299" Margin="20" FontAttributes="Bold"
                     Clicked="OnRegisterClicked" TextColor="Black"/>
