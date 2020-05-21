@@ -26,9 +26,9 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Frame Padding="0">
-                                    <Grid Padding="0">
-
+                                <Frame Padding="0" >
+                                    <Grid Padding="0" BackgroundColor="#FDDA8A">
+                                       
                                         <Label Margin="10,0,10,0" Text="{Binding Nickname}" VerticalOptions="Center" Grid.Column="0"/>
                                         <Label Margin="10,0,10,0" Text="{Binding Punkty}" VerticalOptions="Center" Grid.Column="1"/>
 

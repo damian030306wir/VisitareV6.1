@@ -8,9 +8,9 @@ namespace Visitare
     {
         public RouteQuestions(List<Question> list)
         {
-            routeQuestion = list;
+            routeQuestions = list;
         }
-        public List<Question> routeQuestion { get; set; }
+        public List<Question> routeQuestions { get; set; }
 
 
 

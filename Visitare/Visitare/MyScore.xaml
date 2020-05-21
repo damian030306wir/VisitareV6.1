@@ -19,10 +19,11 @@
                     <Label Margin="10,0,10,0" Text="Punkty:" VerticalOptions="Center" Grid.Column="1" FontSize = "Large" TextColor="Red"/>
                 </Grid>
             </StackLayout>
-            <Frame Padding="0">
+            <Frame Padding="0" BackgroundColor="#FDDA8A">
                 <Grid Padding="0">
-                    <Label Margin="10,0,10,0" Text="{Binding Nickname}" VerticalOptions="Center" Grid.Column="0" FontSize = "Large"/>
-                    <Label Margin="10,0,10,0" Text="{Binding Punkty}" VerticalOptions="Center" Grid.Column="1" FontSize = "Large"/>
+
+                    <Label Margin="10,0,10,0" Text="{Binding Nickname}" VerticalOptions="Center" Grid.Column="0" BackgroundColor="#FDDA8A" FontSize = "Medium"/>
+                    <Label Margin="10,0,10,0" Text="{Binding Punkty}" VerticalOptions="Center" Grid.Column="1" BackgroundColor="#FDDA8A" FontSize = "Large"/>
                 </Grid>
             </Frame>
         </StackLayout>

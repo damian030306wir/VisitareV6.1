@@ -10,9 +10,7 @@ namespace Visitare
         public IList<string> Answers { get; set; }
         public int GoodAnswer { get; set; }
         public string Question1 { get; set; }
-
         public int RouteId { get; set; }
-
-       
+      
     }
 }
