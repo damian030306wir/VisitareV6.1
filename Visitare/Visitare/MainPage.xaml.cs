@@ -97,10 +97,7 @@ namespace Visitare
         {
             await Navigation.PushAsync(new CreatorPage());
         }
-        private async void MyScore(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new MyScore());
-        }
+      
         private async void Rank(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Scoreboard());
