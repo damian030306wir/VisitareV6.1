@@ -13,12 +13,12 @@
     <ScrollView>
         <StackLayout Orientation="Vertical">
             <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="15" Margin="10,8,8,0">
-                <ImageButton Source="blankProfile.png" CornerRadius="25" HeightRequest="10" WidthRequest="45" 
-                     Aspect="Fill" Clicked="OnProfileClicked" HorizontalOptions="End"/>
+                <Button Text="Profil" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
+                Clicked="OnProfileClicked" CornerRadius="18" TextColor="Black" WidthRequest="80"/>
                 <Button Text="Jestem tutaj!" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
-                Clicked="OnHereClicked" CornerRadius="18" TextColor="Black" WidthRequest="100"/>
+                Clicked="OnHereClicked" CornerRadius="18" TextColor="Black" WidthRequest="80"/>
                 <Button Text="Ranking" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
-                Clicked="Rank" CornerRadius="18" TextColor="Black" WidthRequest="100"/>
+                Clicked="Rank" CornerRadius="18" TextColor="Black" WidthRequest="85"/>
                 <Button Text="Wyloguj" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
                 Clicked="OnLogOut" CornerRadius="18" TextColor="Black" WidthRequest="100"/>
             </StackLayout>
