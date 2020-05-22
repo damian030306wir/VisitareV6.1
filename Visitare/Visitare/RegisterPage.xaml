@@ -13,7 +13,7 @@
     <ContentPage.Content>
         <StackLayout>
             <StackLayout Padding="40,80,40,0">
-                <Entry x:Name="login" Placeholder="Nazwa użytkownika" FontSize="20" PlaceholderColor="LightGray"
+                <Entry x:Name="login" Placeholder="Nazwa Użytkownika" FontSize="20" PlaceholderColor="LightGray"
                    WidthRequest="300" HorizontalTextAlignment="Center"/>
                 <Entry x:Name="email" Placeholder="Email" FontSize="20" PlaceholderColor="LightGray"
                    WidthRequest="300" HorizontalTextAlignment="Center"/>
