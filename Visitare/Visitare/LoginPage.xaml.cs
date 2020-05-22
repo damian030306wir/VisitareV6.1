@@ -41,7 +41,7 @@ namespace Visitare
                 await Navigation.PushAsync(new MainPage());
         }
 
-        private void OnGoogleClicked(object sender, EventArgs e)
+        /*private void OnGoogleClicked(object sender, EventArgs e)
         {
             string clientId = null;
             string redirectUri = null;
@@ -127,7 +127,7 @@ namespace Visitare
 
             Debug.WriteLine("Authentication error: " + e.Message);
         }
-
+        */
         private async void Register(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new RegisterPage());

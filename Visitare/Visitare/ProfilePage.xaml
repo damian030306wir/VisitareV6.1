@@ -12,10 +12,6 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout HorizontalOptions="Center" Margin="30">
-                <ImageButton Source="blankProfile.png" CornerRadius="50" WidthRequest="200" HeightRequest="250" 
-                    x:Name="avatar" Aspect="AspectFill"/>
-                <Button Text="Zmień" WidthRequest="40" HeightRequest="40" TextColor="Black"
-                    Clicked="OnPickPhotoButtonClicked" />
                 <StackLayout>
                     <StackLayout>
                         <Grid Padding="0">

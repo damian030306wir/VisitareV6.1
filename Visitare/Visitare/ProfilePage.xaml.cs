@@ -20,7 +20,7 @@ namespace Visitare
             InitializeComponent();
             GetMine();
         }
-
+        /*
         private async void OnPickPhotoButtonClicked(object sender, EventArgs e)
         {
             (sender as Button).IsEnabled = false;
@@ -31,7 +31,7 @@ namespace Visitare
             }
             (sender as Button).IsEnabled = true;
         }
-
+        */
         private async void GetMine()
         {
             var token = Application.Current.Properties["MyToken"].ToString();
