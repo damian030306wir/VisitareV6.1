@@ -17,7 +17,7 @@ namespace Visitare
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MyRoutesPage : ContentPage
     {
-        public List<Routes> Trasy { get; set; }
+        public List<Routes> Trasy;
         public MyRoutesPage()
         {
             InitializeComponent();
