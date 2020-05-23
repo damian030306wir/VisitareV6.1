@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -15,7 +17,7 @@ namespace Visitare
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MyRoutesPage : ContentPage
     {
-        public List<Routes> trasy;
+        public List<Routes> Trasy { get; set; }
         public MyRoutesPage()
         {
             InitializeComponent();
@@ -30,8 +32,8 @@ namespace Visitare
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                 var response = await client.GetStringAsync("http://dearjean.ddns.net:44301/api/Routes/GetMine");
-                trasy = JsonConvert.DeserializeObject<List<Routes>>(response);
-                myroutesList.ItemsSource = trasy;
+                Trasy = JsonConvert.DeserializeObject<List<Routes>>(response);
+                myroutesList.ItemsSource = Trasy;
             }
             catch(Exception xde)
             {
@@ -46,11 +48,11 @@ namespace Visitare
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                 var response = await client.GetStringAsync("http://dearjean.ddns.net:44301/api/Routes/GetMine");
-                trasy = JsonConvert.DeserializeObject<List<Routes>>(response);
-                myroutesList.ItemsSource = trasy;
+                Trasy = JsonConvert.DeserializeObject<List<Routes>>(response);
+                myroutesList.ItemsSource = Trasy;
 
                 var keyword = SearchRoutes.Text;
-                var result = trasy.Where(x => x.Name.ToLower().Contains(keyword.ToLower()));
+                var result = Trasy.Where(x => x.Name.ToLower().Contains(keyword.ToLower()));
                 myroutesList.ItemsSource = result;
             }
             catch(Exception)
@@ -84,14 +86,28 @@ namespace Visitare
             }
         }
 
-        private void OnXClicked(object sender, EventArgs e)
+        private async void OnXClicked(object sender, EventArgs e)
         {
-            var button = sender as Button;
+            var button = sender as ImageButton;
             var route = button?.BindingContext as Routes;
-            var vm = BindingContext as MyRoutesViewModel;
-            vm.RoutesList = trasy;
-            vm?.RemoveCommand.Execute(route);
-            
+       
+            if (await DisplayAlert("Potwierdzenie", "Czy chcesz usunąć tę trasę?","Tak", "Anuluj"))
+            {
+                var token = Application.Current.Properties["MyToken"].ToString();
+                HttpClient client = new HttpClient();
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                var response = await client.DeleteAsync("http://dearjean.ddns.net:44301/api/Routes/" + $"{route.Id}");
+                if (response.IsSuccessStatusCode)
+                {
+                    Trasy.Remove(route);
+                    await DisplayAlert("Sukces", "Usunięto trasę", "OK");
+                }
+                else
+                {
+                    Debug.WriteLine(response.ToString());
+                }
+            }
+
         }
     }
 }
