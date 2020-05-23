@@ -3,12 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+
              mc:Ignorable="d"
              x:Class="Visitare.UserQuestionPage">
     <ContentPage.Content>
         <ScrollView>
-            
+            <ListView x:Name="elo"   Margin="10,0" RowHeight="200">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <Grid >
+                                <StackLayout >
+                                    <Label Text="{Binding Question1}"   />
+                                    <buttons:SfRadioButton   Text="{Binding Answers[0]}" StateChanged="state" />
+                                    <buttons:SfRadioButton   Text="{Binding Answers[1]}" />
+                                    <buttons:SfRadioButton  Text="{Binding Answers[2]}"/>
+                                    <buttons:SfRadioButton  Text="{Binding Answers[3]}" />
+                                   
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </ScrollView>
-        
     </ContentPage.Content>
 </ContentPage>

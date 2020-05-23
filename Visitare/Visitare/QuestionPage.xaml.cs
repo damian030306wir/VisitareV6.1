@@ -100,9 +100,11 @@ namespace Visitare
                     Question1 = zagadkaEntry.Text,
                     RouteId = Convert.ToInt16(numerTrasy.Text)
                 });
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+                var token = Application.Current.Properties["MyToken"].ToString();
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
             HttpClient client = new HttpClient();
-            var result = await client.PostAsync("http://dearjean.ddns.net:44301/api/AnswerAndQuestion2", content);
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                var result = await client.PostAsync("http://dearjean.ddns.net:44301/api/AnswerAndQuestion2", content);
             }
             catch (Exception ex)
             {

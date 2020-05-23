@@ -87,7 +87,7 @@ namespace Visitare
             }
 
 
-            await Navigation.PushAsync(new UserQuestionPage());
+            await Navigation.PushAsync(new UserQuestionPage(new RouteQuestions(list)));
         }
     }
 }
