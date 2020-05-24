@@ -17,52 +17,16 @@ namespace Visitare
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class QuestionPage : ContentPage
     {
-        private Question question;
-
-        private readonly UserQuiz pointsManager;
 
 
-        public bool Result { get; set; }
 
-        public QuestionPage(Question question)
+
+        public QuestionPage()
         {
             InitializeComponent();
-            BindingContext = question;
-            this.question = question;
-
-            Result = false;
-
-            pointsManager = new UserQuiz();
-            label1.BindingContext = pointsManager;
-        }
-
-        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
-        {
-            if (e.ItemIndex == question.GoodAnswer)
-            {
-                Result = true;
-            }
-           
-
-            Navigation.PopModalAsync();
-        }
-        private async void myEntry(object sender, EventArgs e)
-        {
-
-
-            int response = int.Parse(odpowiedzPrawidlowa.Text);
-
-            if (response > 0 & response < 4)
-            {
-
-            }
-            else
-            {
-                await DisplayAlert("Błąd", "Musisz podać odpowiedź z zakresu od 0 do 3", "OK");
-            }
-
 
         }
+
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
@@ -73,38 +37,24 @@ namespace Visitare
                     await DisplayAlert("Błąd", "Uzupełnij wszystkie pola", "Ok");
                     return;
                 }
-           
-            
-            var question = new Question
-            {
-                Answers = new List<string> {
-                odpowiedzEntry1.Text, odpowiedzEntry2.Text, odpowiedzEntry3.Text, odpowiedzEntry4.Text },
-                GoodAnswer = Convert.ToInt16(odpowiedzPrawidlowa.Text),
-                Question1 = zagadkaEntry.Text
-            };
-           
-
-           
-
-            var questionPage = new QuestionPage(question);
-            questionPage.Disappearing += QuestionPageClosed;
-            
-
-            await Navigation.PushModalAsync(questionPage);
 
                 var json = JsonConvert.SerializeObject(new
                 {
                     Answers = new List<string> {
                 odpowiedzEntry1.Text, odpowiedzEntry2.Text, odpowiedzEntry3.Text, odpowiedzEntry4.Text },
-                    GoodAnswer = Convert.ToInt16(odpowiedzPrawidlowa.Text),
+                    Correct = odpowiedzPrawidlowa.Text,
                     Question1 = zagadkaEntry.Text,
                     RouteId = Convert.ToInt16(numerTrasy.Text)
                 });
                 var token = Application.Current.Properties["MyToken"].ToString();
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
-            HttpClient client = new HttpClient();
+                HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                 var result = await client.PostAsync("http://dearjean.ddns.net:44301/api/AnswerAndQuestion2", content);
+                if (result.StatusCode == HttpStatusCode.OK)
+                    await DisplayAlert("Błąd", "Nie masz odpowiednich uprawnień na kreatora! Skontaktuj się z administratorem", "Anuluj");
+                else
+                    await DisplayAlert("Sukces", "Dodanie zagadki do Trasy przebiegło pomyślnie", "Ok");
             }
             catch (Exception ex)
             {
@@ -112,30 +62,10 @@ namespace Visitare
             }
         }
 
-       private async void QuestionPageClosed(object sender, EventArgs e)
-       {
-         var questionPage = sender as QuestionPage;
-         await DisplayAlert("", "Poprawna odpowiedź: " + (questionPage.Result ? "dobrze" : "źle"), "OK");
-            if (questionPage.Result)
-            {
-                pointsManager.Points += 1;
-
-
-                var token = Application.Current.Properties["MyToken"].ToString();
-
-                HttpClient client = new HttpClient();
-
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-
-                var response = await client.GetStringAsync("http://dearjean.ddns.net:44301/api/Rewards/Get15");
-
-            }
-
-        }
 
         private async void TablicaWynikow(object sender, EventArgs e)
         {
-           await Navigation.PushAsync(new Scoreboard());
+            await Navigation.PushAsync(new Scoreboard());
         }
 
         private async void TwojePunkty(object sender, EventArgs e)

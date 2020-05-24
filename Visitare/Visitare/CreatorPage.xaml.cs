@@ -163,7 +163,7 @@ namespace Visitare
         private async void QuizForRoutes(object sender, EventArgs e)
         {
 
-            await Navigation.PushAsync(new QuestionPage(new Question()));
+            await Navigation.PushAsync(new QuestionPage());
         }
     }
 }

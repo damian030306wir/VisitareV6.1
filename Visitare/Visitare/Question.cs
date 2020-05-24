@@ -11,6 +11,8 @@ namespace Visitare
         public int GoodAnswer { get; set; }
         public string Question1 { get; set; }
         public int RouteId { get; set; }
-      
+
+        public string Correct { get; set; }
+
     }
 }
