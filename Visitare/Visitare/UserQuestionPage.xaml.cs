@@ -1,5 +1,5 @@
 ﻿using Newtonsoft.Json;
-using Syncfusion.XForms.Buttons;
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,7 +22,7 @@ namespace Visitare
         public List<Question> pointsList = new List<Question>();
 
         Question pytania = new Question();
-        SfRadioButton radioButton = new SfRadioButton();
+       
 
         public bool Result { get; set; }
         public UserQuestionPage(RouteQuestions siema)
