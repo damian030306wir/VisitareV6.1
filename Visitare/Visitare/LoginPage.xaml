@@ -16,7 +16,7 @@
             <StackLayout Padding="40,80,40,0">
                 <Image Margin="20,-80,20,0" Source="Visitare.png"/>
 
-                <Entry x:Name="login" Text="teestz2" Placeholder="Password123!" FontSize="20" PlaceholderColor="LightGray"
+                <Entry x:Name="login" Text="teestz2" Placeholder="Nazwa Użytkownika" FontSize="20" PlaceholderColor="LightGray"
                    WidthRequest="300" HorizontalTextAlignment="Center"/>
                 <Entry x:Name="password" Text="Password123!" Placeholder="Hasło" FontSize="20" IsPassword="True" PlaceholderColor="LightGray" 
                    WidthRequest="300" HorizontalTextAlignment="Center"/>

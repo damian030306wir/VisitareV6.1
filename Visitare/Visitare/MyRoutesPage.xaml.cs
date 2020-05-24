@@ -97,15 +97,22 @@ namespace Visitare
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                 var response = await client.DeleteAsync("http://dearjean.ddns.net:44301/api/Routes/" + $"{route.Id}");
+                myroutesList.ItemsSource = Trasy;
+               
                 if (response.IsSuccessStatusCode)
                 {
                     Trasy.Remove(route);
                     await DisplayAlert("Sukces", "Usunięto trasę", "OK");
+                    Navigation.InsertPageBefore(new MyRoutesPage(), this);
+                    await Navigation.PopAsync();
+
                 }
                 else
                 {
                     Debug.WriteLine(response.ToString());
                 }
+               
+
             }
 
         }
