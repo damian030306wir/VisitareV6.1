@@ -32,7 +32,7 @@ namespace Visitare
         {
             try
             {
-                if (String.IsNullOrWhiteSpace(zagadkaEntry.Text) && String.IsNullOrWhiteSpace(odpowiedzEntry1.Text) && String.IsNullOrWhiteSpace(odpowiedzEntry2.Text) && String.IsNullOrWhiteSpace(odpowiedzEntry3.Text) && String.IsNullOrWhiteSpace(odpowiedzEntry4.Text) && String.IsNullOrWhiteSpace(odpowiedzPrawidlowa.Text))
+                if (String.IsNullOrWhiteSpace(zagadkaEntry.Text) && String.IsNullOrWhiteSpace(odpowiedzEntry1.Text) && String.IsNullOrWhiteSpace(odpowiedzEntry2.Text) && String.IsNullOrWhiteSpace(odpowiedzEntry3.Text) && String.IsNullOrWhiteSpace(odpowiedzEntry4.Text) && String.IsNullOrWhiteSpace(odpowiedzPrawidlowa.Text) && String.IsNullOrWhiteSpace(numerTrasy.Text))
                 {
                     await DisplayAlert("Błąd", "Uzupełnij wszystkie pola", "Ok");
                     return;

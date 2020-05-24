@@ -24,7 +24,7 @@
                     </EventTrigger>
                 </Entry.Triggers>
             </Entry>
-            <Entry x:Name="numerTrasy" Text="" Placeholder="Numer trasy: " FontSize="Small" ClearButtonVisibility="WhileEditing"/>
+            <Entry x:Name="numerTrasy" Keyboard= "Numeric" Text="" Placeholder="Numer trasy: " FontSize="Small" ClearButtonVisibility="WhileEditing"/>
             <Button x:Name="button" Text="Wyślij zagadkę" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
                 Margin="0,15" Clicked="Button_Clicked" CornerRadius="25" TextColor="Black">
             </Button>
