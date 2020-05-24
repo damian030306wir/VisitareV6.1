@@ -101,7 +101,6 @@ namespace Visitare
                
                 if (response.IsSuccessStatusCode)
                 {
-                    Trasy.Remove(route);
                     await DisplayAlert("Sukces", "Usunięto trasę", "OK");
                     Navigation.InsertPageBefore(new MyRoutesPage(), this);
                     await Navigation.PopAsync();
@@ -109,9 +108,9 @@ namespace Visitare
                 }
                 else
                 {
+                    await DisplayAlert("Błąd", "Spróbuj ponownie później", "OK");
                     Debug.WriteLine(response.ToString());
                 }
-               
 
             }
 
