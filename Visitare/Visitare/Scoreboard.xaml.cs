@@ -37,8 +37,10 @@ namespace Visitare
             var tablicaW = JsonConvert.DeserializeObject<List<RewardsGetALL>>(response);
 
             scoreBoard.ItemsSource = tablicaW.OrderByDescending(p => p.Punkty);
+           
+           
 
-
+            
 
 
         } 

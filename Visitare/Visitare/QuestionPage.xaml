@@ -11,12 +11,12 @@
         <StackLayout>
 
 
-            <Entry x:Name="zagadkaEntry" Text="" Placeholder="Zagadka/pytanie do Trasy:" FontSize="Small" ClearButtonVisibility="WhileEditing" />
-            <Entry x:Name="odpowiedzEntry1" Text="" Placeholder="Oczekiwana odpowiedź 1:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
-            <Entry x:Name="odpowiedzEntry2" Text="" Placeholder="Oczekiwana odpowiedź 2:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
-            <Entry x:Name="odpowiedzEntry3" Text="" Placeholder="Oczekiwana odpowiedź 3:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
-            <Entry x:Name="odpowiedzEntry4" Text="" Placeholder="Oczekiwana odpowiedź 4:" FontSize="Small" ClearButtonVisibility="WhileEditing"/>
-            <Entry x:Name="odpowiedzPrawidlowa" Text="" Placeholder="Prawidlowa odpowiedz: " FontSize="Small" ClearButtonVisibility="WhileEditing" >
+            <Entry x:Name="zagadkaEntry" Text="" Placeholder="Zagadka/pytanie do Trasy:" FontSize="Small" ClearButtonVisibility="WhileEditing" HorizontalTextAlignment="Center" />
+            <Entry x:Name="odpowiedzEntry1" Text="" Placeholder="Oczekiwana odpowiedź 1:" FontSize="Small" ClearButtonVisibility="WhileEditing" HorizontalTextAlignment="Center" />
+            <Entry x:Name="odpowiedzEntry2" Text="" Placeholder="Oczekiwana odpowiedź 2:" FontSize="Small" ClearButtonVisibility="WhileEditing" HorizontalTextAlignment="Center" />
+            <Entry x:Name="odpowiedzEntry3" Text="" Placeholder="Oczekiwana odpowiedź 3:" FontSize="Small" ClearButtonVisibility="WhileEditing" HorizontalTextAlignment="Center" />
+            <Entry x:Name="odpowiedzEntry4" Text="" Placeholder="Oczekiwana odpowiedź 4:" FontSize="Small" ClearButtonVisibility="WhileEditing" HorizontalTextAlignment="Center" />
+            <Entry x:Name="odpowiedzPrawidlowa" Text="" Placeholder="Prawidłowa odpowiedz: " FontSize="Small" ClearButtonVisibility="WhileEditing"  HorizontalTextAlignment="Center" >
 
                 <Entry.Triggers>
                     <EventTrigger Event="TextChanged">
@@ -24,7 +24,7 @@
                     </EventTrigger>
                 </Entry.Triggers>
             </Entry>
-            <Entry x:Name="numerTrasy" Keyboard= "Numeric" Text="" Placeholder="Numer trasy: " FontSize="Small" ClearButtonVisibility="WhileEditing"/>
+            <Entry x:Name="numerTrasy" Keyboard= "Numeric" Text="" Placeholder="Numer trasy: " FontSize="Small" ClearButtonVisibility="WhileEditing" HorizontalTextAlignment="Center" />
             <Button x:Name="button" Text="Wyślij zagadkę" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
                 Margin="0,15" Clicked="Button_Clicked" CornerRadius="25" TextColor="Black">
             </Button>

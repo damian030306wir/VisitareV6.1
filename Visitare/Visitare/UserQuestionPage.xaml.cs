@@ -19,7 +19,7 @@ namespace Visitare
     public partial class UserQuestionPage : ContentPage
     {
 
-        public List<Question> pointsList = new List<Question>();
+        public List<Question> quest = new List<Question>();
 
         Question pytania = new Question();
        
@@ -30,10 +30,10 @@ namespace Visitare
 
             InitializeComponent();
 
-            pointsList = siema.routeQuestions;
+            quest = siema.routeQuestions;
 
 
-            elo.ItemsSource = pointsList;
+            elo.ItemsSource = quest;
             Result = false;
 
         }
@@ -56,7 +56,7 @@ namespace Visitare
             List<Question> list = new List<Question>();
 
 
-            foreach (Question tmp in pointsList)
+            foreach (Question tmp in quest)
             {
                 Result = false;
                 if (Convert.ToString(tmp.Correct) == Convert.ToString((sender as Button).Text))
@@ -94,7 +94,7 @@ namespace Visitare
             var response = await client.GetStringAsync("http://dearjean.ddns.net:44301/api/AnswerAndQuestion2");
             List<Question> punkty = JsonConvert.DeserializeObject<List<Question>>(response);
             List<Question> list = new List<Question>();
-            foreach (Question tmp in pointsList)
+            foreach (Question tmp in quest)
             {
                 Result = false;
                 if (Convert.ToString(tmp.Correct) == Convert.ToString((sender as Button).Text))
@@ -133,7 +133,7 @@ namespace Visitare
             List<Question> list = new List<Question>();
 
 
-            foreach (Question tmp in pointsList)
+            foreach (Question tmp in quest)
             {
                 Result = false;
                 if (Convert.ToString(tmp.Correct) == Convert.ToString((sender as Button).Text))
@@ -169,7 +169,7 @@ namespace Visitare
             List<Question> punkty = JsonConvert.DeserializeObject<List<Question>>(response);
             List<Question> list = new List<Question>();
 
-            foreach (Question tmp in pointsList)
+            foreach (Question tmp in quest)
             {
                 Result = false;
                 if (Convert.ToString(tmp.Correct) == Convert.ToString((sender as Button).Text))

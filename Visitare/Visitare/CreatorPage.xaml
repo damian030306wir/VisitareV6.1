@@ -17,8 +17,8 @@
 
                 </local:CustomMap>
 
-                <Entry x:Name="nazwaEntry" Placeholder="Podaj nazwę punktu:" FontSize="Small" HorizontalTextAlignment="Center"/>
-                <Entry x:Name="opisEntry" Placeholder="Opis punktu:" FontSize="Small" HorizontalTextAlignment="Center"/>
+                <Entry x:Name="nazwaEntry" Placeholder="Podaj nazwę punktu:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing"/>
+                <Entry x:Name="opisEntry" Placeholder="Opis punktu:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing"/>
 
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="15" Margin="8">
@@ -32,8 +32,8 @@
                 Clicked="QuizForRoutes" CornerRadius="25" TextColor="Black" WidthRequest="80"/>
             </StackLayout>
             <StackLayout HeightRequest="450" Margin="-15">
-                <Entry x:Name="trasaEntry" Placeholder="Podaj nazwę trasy:" FontSize="Small" HorizontalTextAlignment="Center"/>
-                <Entry x:Name="opistrasyEntry" Placeholder="Opis trasy:" FontSize="Small" HorizontalTextAlignment="Center"/>
+                <Entry x:Name="trasaEntry" Placeholder="Podaj nazwę trasy:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing"/>
+                <Entry x:Name="opistrasyEntry" Placeholder="Opis trasy:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing"/>
             </StackLayout>
         </StackLayout>
     </ScrollView>
