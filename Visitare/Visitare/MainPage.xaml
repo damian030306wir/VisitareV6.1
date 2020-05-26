@@ -16,8 +16,6 @@
                 Clicked="OnProfileClicked" CornerRadius="18" TextColor="Black" WidthRequest="80"/>
             <Button Text="Jestem tutaj!" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
                 Clicked="OnHereClicked" CornerRadius="18" TextColor="Black" WidthRequest="80"/>
-            <Button Text="Ranking" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
-                Clicked="Rank" CornerRadius="18" TextColor="Black" WidthRequest="85"/>
             <Button Text="Wyloguj" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
                 Clicked="OnLogOut" CornerRadius="18" TextColor="Black" WidthRequest="100"/>
         </StackLayout>
@@ -28,12 +26,17 @@
             <Button Text="Wyczyść" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="End"
                 Clicked="OnClearClicked" CornerRadius="25" TextColor="Black" WidthRequest="100"/>
             <Button Text="Kreator" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
-                Clicked="OnCreatorClicked" CornerRadius="25" TextColor="Black" WidthRequest="150"/>
+                Clicked="OnCreatorClicked" CornerRadius="25" TextColor="Black" WidthRequest="120"/>
             <Button Text="Trasy" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
                 Clicked="OnRoutesClicked" CornerRadius="25" TextColor="Black" WidthRequest="100"/>
         </StackLayout>
     </StackLayout>
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Ranking" 
+                        Activated="Rank"/>
 
+
+    </ContentPage.ToolbarItems>
 
 </ContentPage>

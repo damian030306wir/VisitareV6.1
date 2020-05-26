@@ -10,15 +10,16 @@
     <NavigationPage.TitleView>
         <Label Text="Kreator" TextColor="White" FontSize="Title" Margin="10,0"/>
     </NavigationPage.TitleView>
-    <ScrollView>
-        <StackLayout Orientation="Vertical">
-            <StackLayout HeightRequest="450">
-                <local:CustomMap x:Name="customMap" Margin="2" IsShowingUser="true" MapClicked="OnMapClicked">
+    
+        <StackLayout Orientation="Vertical" >
+        <StackLayout HeightRequest="450" Margin="0,0,0,-40">
+                
+                <local:CustomMap x:Name="customMap" Margin="2,0,0,0" IsShowingUser="true" MapClicked="OnMapClicked" >
 
                 </local:CustomMap>
 
-                <Entry x:Name="nazwaEntry" Placeholder="Podaj nazwę punktu:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing"/>
-                <Entry x:Name="opisEntry" Placeholder="Opis punktu:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing"/>
+            <Entry x:Name="nazwaEntry" Placeholder="Podaj nazwę punktu:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing" Margin="0,0,0,0"/>
+            <Entry x:Name="opisEntry" Placeholder="Opis punktu:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing"  Margin="0,0,0,40"/>
 
             </StackLayout>
             <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="15" Margin="8">
@@ -28,14 +29,19 @@
                 Clicked="OnMyRoutesClicked" CornerRadius="25" TextColor="Black"/>
                 <Button Text="Nowa Trasa" BackgroundColor="#be8feb" FontAttributes="Bold" WidthRequest="80" HorizontalOptions="EndAndExpand"
                 Clicked="OnNewRouteClicked" CornerRadius="25" TextColor="Black"/>
-                <Button Text="Quiz do trasy" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="End"
-                Clicked="QuizForRoutes" CornerRadius="25" TextColor="Black" WidthRequest="80"/>
+               
             </StackLayout>
-            <StackLayout HeightRequest="450" Margin="-15">
+            <StackLayout  HeightRequest="450" Margin="-15" >
+                
                 <Entry x:Name="trasaEntry" Placeholder="Podaj nazwę trasy:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing"/>
-                <Entry x:Name="opistrasyEntry" Placeholder="Opis trasy:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing"/>
+                <Entry x:Name="opistrasyEntry" Placeholder="Opis trasy:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing" />
             </StackLayout>
         </StackLayout>
-    </ScrollView>
-    
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Quiz do trasy" 
+                        Activated="Quiz"/>
+        
+
+    </ContentPage.ToolbarItems>
 </ContentPage>

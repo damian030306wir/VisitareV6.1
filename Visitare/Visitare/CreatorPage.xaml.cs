@@ -18,6 +18,7 @@ namespace Visitare
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class CreatorPage : ContentPage
     {
+     
         public List<Points> routePoints = new List<Points>();
         public Polyline polyline = new Polyline
         {
@@ -160,7 +161,7 @@ namespace Visitare
                 await DisplayAlert("Uwaga!", "Nie masz odpowiednich uprawnień na kreatora! Skontaktuj się z administratorem", "Anuluj");
             }
         }
-        private async void QuizForRoutes(object sender, EventArgs e)
+        private async void Quiz(object sender, EventArgs e)
         {
 
             await Navigation.PushAsync(new QuestionPage());
