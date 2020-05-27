@@ -9,5 +9,7 @@ namespace Visitare
         public string Nickname { get; set; }
         public string Id { get; set; }
         public int Punkty { get; set; }
+
+       public IList<string> Roles { get; set; }
     }
 }
