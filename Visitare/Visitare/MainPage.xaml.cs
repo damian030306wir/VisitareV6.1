@@ -75,7 +75,9 @@ namespace Visitare
         }
         private async void OnLogOut(object sender, EventArgs e)
         {
-            await Navigation.PopToRootAsync();
+            await Navigation.PushAsync(new LoginPage());
+            Navigation.RemovePage(this);
+
             Application.Current.Properties["MyToken"] = "";
         }
         private async void OnProfileClicked(object sender, EventArgs e)
