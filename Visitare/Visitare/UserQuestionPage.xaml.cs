@@ -66,17 +66,7 @@ namespace Visitare
                 }
             }
             await DisplayAlert("", "Poprawna odpowiedź: " + (Result ? "dobrze" : "źle"), "OK");
-            if(Result)
-            {
-                var token1 = Application.Current.Properties["MyToken"].ToString();
-
-                HttpClient client1 = new HttpClient();
-
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token1);
-
-                var response1 = await client.GetStringAsync("http://dearjean.ddns.net:44301/api/Rewards/Get50");
-                await DisplayAlert("Sukces", "Otrzymujesz 50 punktów za poprawną odpowiedź!", "Ok");
-            }
+          
         }
 
 
@@ -104,17 +94,7 @@ namespace Visitare
                 }
             }
             await DisplayAlert("", "Poprawna odpowiedź: " + (Result ? "dobrze" : "źle"), "OK");
-            if (Result)
-            {
-                var token1 = Application.Current.Properties["MyToken"].ToString();
-
-                HttpClient client1 = new HttpClient();
-
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token1);
-
-                var response1 = await client.GetStringAsync("http://dearjean.ddns.net:44301/api/Rewards/Get50");
-                await DisplayAlert("Sukces", "Otrzymujesz 50 punktów za poprawną odpowiedź!", "Ok");
-            }
+           
 
         }
         private async void indexThree(object sender, EventArgs args)
@@ -143,17 +123,7 @@ namespace Visitare
                 }
             }
             await DisplayAlert("", "Poprawna odpowiedź: " + (Result ? "dobrze" : "źle"), "OK");
-            if (Result)
-            {
-                var token1 = Application.Current.Properties["MyToken"].ToString();
-
-                HttpClient client1 = new HttpClient();
-
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token1);
-
-                var response1 = await client.GetStringAsync("http://dearjean.ddns.net:44301/api/Rewards/Get50");
-                await DisplayAlert("Sukces", "Otrzymujesz 50 punktów za poprawną odpowiedź!", "Ok");
-            }
+          
         }
         private async void indexFour(object sender, EventArgs args)
         {
@@ -179,17 +149,7 @@ namespace Visitare
                 }
             }
             await DisplayAlert("", "Poprawna odpowiedź: " + (Result ? "dobrze" : "źle"), "OK");
-            if (Result)
-            {
-                var token1 = Application.Current.Properties["MyToken"].ToString();
-
-                HttpClient client1 = new HttpClient();
-
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token1);
-
-                var response1 = await client.GetStringAsync("http://dearjean.ddns.net:44301/api/Rewards/Get50");
-                await DisplayAlert("Sukces", "Otrzymujesz 50 punktów za poprawną odpowiedź!", "Ok");
-            }
+            
         }
 
 
