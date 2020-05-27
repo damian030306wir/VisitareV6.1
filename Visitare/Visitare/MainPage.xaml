@@ -12,30 +12,29 @@
     </NavigationPage.TitleView>
     <StackLayout Orientation="Vertical">
         <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="15" Margin="10,8,8,0">
-            <Button Text="Profil" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
-                Clicked="OnProfileClicked" CornerRadius="18" TextColor="Black" WidthRequest="80"/>
-            <Button Text="Jestem tutaj!" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
-                Clicked="OnHereClicked" CornerRadius="18" TextColor="Black" WidthRequest="80"/>
-            <Button Text="Wyloguj" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
-                Clicked="OnLogOut" CornerRadius="18" TextColor="Black" WidthRequest="100"/>
+            <Button Text="Profil" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
+                Clicked="OnProfileClicked" CornerRadius="18" TextColor="Black" />
+            <Button Text="Jestem tutaj!" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
+                Clicked="OnHereClicked" CornerRadius="18" TextColor="Black" />
+            <Button Text="Wyloguj" BackgroundColor="#439299" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
+                Clicked="OnLogOut" CornerRadius="18" TextColor="Black" />
         </StackLayout>
-        <StackLayout>
-            <local:CustomMap x:Name="customMap" Margin="2" IsShowingUser="true" HeightRequest="400"/>
+        <StackLayout VerticalOptions="FillAndExpand">
+            <local:CustomMap x:Name="customMap" Margin="2" IsShowingUser="true" VerticalOptions="FillAndExpand"/>
         </StackLayout>
-        <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="15" Margin="8">
-            <Button Text="Wyczyść" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="End"
-                Clicked="OnClearClicked" CornerRadius="25" TextColor="Black" WidthRequest="100"/>
-            <Button Text="Kreator" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
-                Clicked="OnCreatorClicked" CornerRadius="25" TextColor="Black" WidthRequest="120"/>
-            <Button Text="Trasy" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="EndAndExpand"
-                Clicked="OnRoutesClicked" CornerRadius="25" TextColor="Black" WidthRequest="100"/>
+        <StackLayout Orientation="Horizontal" VerticalOptions="End" Spacing="15" Margin="8">
+            <Button Text="Wyczyść" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
+                Clicked="OnClearClicked" CornerRadius="25" TextColor="Black" />
+            <Button Text="Kreator" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
+                Clicked="OnCreatorClicked" CornerRadius="25" TextColor="Black"/>
+            <Button Text="Trasy" BackgroundColor="#be8feb" FontAttributes="Bold" HorizontalOptions="FillAndExpand"
+                Clicked="OnRoutesClicked" CornerRadius="25" TextColor="Black"/>
         </StackLayout>
     </StackLayout>
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Ranking" 
                         Activated="Rank"/>
-
 
     </ContentPage.ToolbarItems>
 

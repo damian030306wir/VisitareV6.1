@@ -34,7 +34,7 @@ namespace Visitare
         {
             var response = await _service.LoginAsync(login.Text, password.Text);
             if(response == "1")
-                await DisplayAlert("Brak połączenia", "Przekroczono czas przeznaczony na połączenie", "OK");
+                await DisplayAlert("Brak połączenia", "Nie masz połączenia z internetem lub serwer nie jest dostępny", "OK");
             else if(string.IsNullOrEmpty(response))
                 await DisplayAlert("Błędne dane", "Spróbuj ponownie", "OK");
             else

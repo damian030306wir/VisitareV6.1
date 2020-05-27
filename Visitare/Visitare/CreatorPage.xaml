@@ -10,38 +10,30 @@
     <NavigationPage.TitleView>
         <Label Text="Kreator" TextColor="White" FontSize="Title" Margin="10,0"/>
     </NavigationPage.TitleView>
-    
-        <StackLayout Orientation="Vertical" >
-        <StackLayout HeightRequest="450" Margin="0,0,0,-40">
-                
-                <local:CustomMap x:Name="customMap" Margin="2,0,0,0" IsShowingUser="true" MapClicked="OnMapClicked" >
 
-                </local:CustomMap>
-
-            <Entry x:Name="nazwaEntry" Placeholder="Podaj nazwę punktu:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing" Margin="0,0,0,0"/>
-            <Entry x:Name="opisEntry" Placeholder="Opis punktu:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing"  Margin="0,0,0,40"/>
-
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="15" Margin="8">
-                <Button Text="Wyczyść" BackgroundColor="#be8feb" FontAttributes="Bold" WidthRequest="110" HorizontalOptions="End"
-                Clicked="OnClearClicked" CornerRadius="25" TextColor="Black"/>
-                <Button Text="Moje Trasy" BackgroundColor="#be8feb" FontAttributes="Bold" WidthRequest="80" HorizontalOptions="EndAndExpand"
-                Clicked="OnMyRoutesClicked" CornerRadius="25" TextColor="Black"/>
-                <Button Text="Nowa Trasa" BackgroundColor="#be8feb" FontAttributes="Bold" WidthRequest="80" HorizontalOptions="EndAndExpand"
-                Clicked="OnNewRouteClicked" CornerRadius="25" TextColor="Black"/>
-               
-            </StackLayout>
-            <StackLayout  HeightRequest="450" Margin="-15" >
-                
-                <Entry x:Name="trasaEntry" Placeholder="Podaj nazwę trasy:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing"/>
-                <Entry x:Name="opistrasyEntry" Placeholder="Opis trasy:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing" />
-            </StackLayout>
+    <StackLayout Orientation="Vertical" >
+        <StackLayout VerticalOptions="FillAndExpand" MinimumHeightRequest="150">
+            <local:CustomMap x:Name="customMap" Margin="2" IsShowingUser="true" MapClicked="OnMapClicked" VerticalOptions="FillAndExpand"/>
         </StackLayout>
+        <StackLayout Orientation="Vertical" VerticalOptions="End">
+            <Entry x:Name="nazwaEntry" Placeholder="Podaj nazwę punktu:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing" Margin="0,0,0,0"/>
+            <Entry x:Name="opisEntry" Placeholder="Opis punktu:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing"  Margin="0,0,0,0"/>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" Spacing="15" Margin="8">
+            <Button Text="Wyczyść" BackgroundColor="#be8feb" FontAttributes="Bold"  HorizontalOptions="FillAndExpand"
+                    Clicked="OnClearClicked" CornerRadius="25" TextColor="Black"/>
+            <Button Text="Moje Trasy" BackgroundColor="#be8feb" FontAttributes="Bold"  HorizontalOptions="FillAndExpand"
+                    Clicked="OnMyRoutesClicked" CornerRadius="25" TextColor="Black"/>
+            <Button Text="Nowa Trasa" BackgroundColor="#be8feb" FontAttributes="Bold"  HorizontalOptions="FillAndExpand"
+                    Clicked="OnNewRouteClicked" CornerRadius="25" TextColor="Black"/>
+        </StackLayout>
+        <StackLayout>
+            <Entry x:Name="trasaEntry" Placeholder="Podaj nazwę trasy:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing"/>
+            <Entry x:Name="opistrasyEntry" Placeholder="Opis trasy:" FontSize="Small" HorizontalTextAlignment="Center"  ClearButtonVisibility="WhileEditing" />
+        </StackLayout>
+    </StackLayout>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Quiz do trasy" 
-                        Activated="Quiz"/>
-        
-
+        <ToolbarItem Text="Quiz do trasy" Activated="Quiz"/>
     </ContentPage.ToolbarItems>
 </ContentPage>
