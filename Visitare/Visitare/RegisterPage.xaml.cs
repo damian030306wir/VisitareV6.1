@@ -51,7 +51,7 @@ namespace Visitare
             else
             {
                 Debug.WriteLine(response);
-                await DisplayAlert("Błąd", "Spróbuj ponownie", "OK");
+                await DisplayAlert("Błąd", "Hasło musi składać się z minimum 6 znaków, 1 znaku specjalnego i wielkiej litery!", "OK");
             }         
         }
     }
