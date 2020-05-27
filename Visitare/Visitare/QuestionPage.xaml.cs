@@ -61,13 +61,10 @@ namespace Visitare
                 await DisplayAlert("Błąd", "Uzupełnij wszystkie pola", "Ok");
             }
         }
-
-
         private async void TablicaWynikow(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Scoreboard());
         }
-
         private async void TwojePunkty(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new MyScore());

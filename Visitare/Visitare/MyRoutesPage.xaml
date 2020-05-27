@@ -19,11 +19,6 @@
                 <SearchBar x:Name="SearchRoutes" TextChanged="MethodSearchRoutes" HeightRequest="50"></SearchBar>
                 <StackLayout>
 
-                    <Grid Padding="0" Margin="15">
-                        <Label Text="Trasa:" VerticalOptions="Center" Grid.Column="0" FontSize = "Medium" TextColor="Red"/>
-                        <Label  Text="Opis trasy:" VerticalOptions="Center" Grid.Column="1" FontSize = "Medium" TextColor="Red"/>
-                    </Grid>
-
                 </StackLayout>
                 <ListView Margin="0,0,0,0" x:Name="myroutesList"
                 HorizontalOptions="Center"  
@@ -39,29 +34,30 @@
                                 <StackLayout Orientation="Vertical">
                                     <StackLayout Orientation="Horizontal">
                                         <Label Text="Nr." TextColor="Black"
-                                           FontAttributes="Bold" FontSize="15"
-                                           HorizontalTextAlignment="Center"
-                                           Margin="5,10,20,10"/>
+                                           FontAttributes="Bold" FontSize="12"
+                                           HorizontalOptions="Start"
+                                           Margin="10"/>
                                         <Label Text="{Binding Id}" TextColor="Black"
-                                           FontAttributes="Bold" FontSize="15"
+                                           FontAttributes="Bold" FontSize="12"
+                                           HorizontalOptions="Start"   
+                                           Margin="-15,10,10,10" MinimumWidthRequest="15"/>
+                                        <Label Text="{Binding Name}"
+                                           TextColor="Black" HorizontalOptions="CenterAndExpand"
                                            HorizontalTextAlignment="Center"
-                                           Margin="-25,10,0,0"/>
-                                        <Label Text="{Binding Name}" TextColor="Black"
-                                           FontAttributes="Bold" FontSize="15"
-                                           HorizontalTextAlignment="Center"
-                                           Margin="20,10,20,10"/>
-                                        <Label Text="{Binding Description}" TextColor="Black"
-                                           HorizontalTextAlignment="Center"
-                                           VerticalTextAlignment="Center"
-                                           FontAttributes="Italic" FontSize="10"
+                                           FontAttributes="Bold" 
+                                           FontSize="15"
                                            Margin="10"/>
                                         <ImageButton x:Name="deleteButton" Source="redX.png"
-                                            HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"
+                                            HorizontalOptions="End" VerticalOptions="CenterAndExpand"
                                             Clicked="OnXClicked" BackgroundColor="#FDDA8A" CornerRadius="20"
-                                            WidthRequest="20" HeightRequest="20" Margin="3"
-                                            
-                                    />
+                                            WidthRequest="40" HeightRequest="40" Margin="5"/>
                                     </StackLayout>
+                                    <Label Text="{Binding Description}"
+                                   TextColor="Black"
+                                   HorizontalTextAlignment="Center"
+                                   FontAttributes="Italic" 
+                                   FontSize="10"
+                                   Margin="10"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

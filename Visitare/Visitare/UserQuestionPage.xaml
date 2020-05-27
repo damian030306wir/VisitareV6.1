@@ -20,9 +20,7 @@
                                     <Button Clicked="indexTwo"  Text="{Binding Answers[1]}" />
                                     <Button Clicked="indexThree" Text="{Binding Answers[2]}"/>
                                     <Button Clicked="indexFour" Text="{Binding Answers[3]}" />
-
                                 </StackLayout>
-
                             </Grid>
                         </ViewCell>
                     </DataTemplate>

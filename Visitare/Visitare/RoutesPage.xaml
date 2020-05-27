@@ -29,31 +29,29 @@
                                     <StackLayout Orientation="Horizontal">
                                         <Label Text="Nr." TextColor="Black"
                                            FontAttributes="Bold" FontSize="12"
-                                           HorizontalTextAlignment="Center"
-                                           Margin="5,10,20,10"/>
+                                           HorizontalOptions="Start"
+                                           Margin="10"/>
                                         <Label Text="{Binding Id}" TextColor="Black"
                                            FontAttributes="Bold" FontSize="12"
-                                           HorizontalTextAlignment="Center"
-                                           Margin="-25,10,0,0" MinimumWidthRequest="15"/>
+                                           HorizontalOptions="Start"   
+                                           Margin="-15,10,10,10" MinimumWidthRequest="15"/>
                                         <Label Text="{Binding Name}"
-                                   TextColor="Black"
-                                   HorizontalTextAlignment="Center"
-                                   FontAttributes="Bold" 
-                                   FontSize="15"
-                                   Margin="10"/>
-                                        
+                                           TextColor="Black" HorizontalOptions="CenterAndExpand"
+                                           HorizontalTextAlignment="Center"
+                                           FontAttributes="Bold" 
+                                           FontSize="15"
+                                           Margin="10"/>
                                         <ImageButton x:Name="quizButton" Source="quiz2.png"
-                                            HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"
+                                            HorizontalOptions="End" VerticalOptions="CenterAndExpand"
                                             Clicked="OnQuizClicked" BackgroundColor="#FDDA8A" CornerRadius="20"
                                             WidthRequest="40" HeightRequest="40" Margin="5"/>
                                     </StackLayout>
                                     <Label Text="{Binding Description}"
                                    TextColor="Black"
                                    HorizontalTextAlignment="Center"
-                                   VerticalTextAlignment="Center"
                                    FontAttributes="Italic" 
                                    FontSize="10"
-                                   Margin="5"/>
+                                   Margin="10"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
