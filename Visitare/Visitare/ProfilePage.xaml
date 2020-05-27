@@ -38,7 +38,7 @@
                    WidthRequest="300" HorizontalTextAlignment="Center"/>
                     <Button Text="Zmień Hasło" CornerRadius="23" BackgroundColor="#439299" Margin="20" FontAttributes="Bold"
                     Clicked="OnChangePasswordClicked" TextColor="Black"/>
-                    <Label  Text="Kontakt do Administratora: visitare-contact@wp.pl" VerticalOptions="Center" Margin="20"/>
+                    <Label Text="Kontakt do Administratora: visitare-contact@wp.pl" VerticalOptions="Center" Margin="20"/>
                 </StackLayout>
             </StackLayout>
         </ScrollView>
