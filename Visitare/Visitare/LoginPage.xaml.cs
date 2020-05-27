@@ -39,7 +39,7 @@ namespace Visitare
                 await DisplayAlert("Błędne dane", "Spróbuj ponownie", "OK");
             else
                 await Navigation.PushAsync(new MainPage());
-                Navigation.RemovePage(this);
+               
 
 
         }
