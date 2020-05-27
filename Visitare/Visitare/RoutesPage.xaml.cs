@@ -66,7 +66,6 @@ namespace Visitare
             await Navigation.PushAsync(new MainPage(new RoutePoints(list)));
 
         }
-
         private async void OnQuizClicked(object sender, EventArgs e)
         {
              var button = sender as ImageButton;
@@ -85,8 +84,6 @@ namespace Visitare
                     list.Add(tmp);
                 }
             }
-
-
             await Navigation.PushAsync(new UserQuestionPage(new RouteQuestions(list)));
         }
     }

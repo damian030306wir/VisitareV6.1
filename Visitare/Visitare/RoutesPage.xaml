@@ -13,15 +13,7 @@
         <ScrollView>
             <StackLayout>
                 <SearchBar x:Name="SearchRoutes" TextChanged="MethodSearchRoutes" HeightRequest="50"></SearchBar>
-                <StackLayout>
-
-                    <Grid Padding="0" Margin="15">
-                        <Label Text="Trasa:" VerticalOptions="Center" Grid.Column="0" FontSize = "Medium" TextColor="Red"/>
-                        <Label  Text="Opis trasy:" VerticalOptions="Center" Grid.Column="1" FontSize = "Medium" TextColor="Red"/>
-                        <Label  Text="Quiz:" VerticalOptions="Center" Grid.Column="3" FontSize = "Medium" TextColor="Red"/>
-                    </Grid>
-
-                </StackLayout>
+ 
                 <ListView Margin="0,0,0,0" x:Name="routesList"
                 HorizontalOptions="Center"  
                 VerticalOptions="Center"
@@ -36,31 +28,32 @@
                                 <StackLayout Orientation="Vertical">
                                     <StackLayout Orientation="Horizontal">
                                         <Label Text="Nr." TextColor="Black"
-                                           FontAttributes="Bold" FontSize="15"
+                                           FontAttributes="Bold" FontSize="12"
                                            HorizontalTextAlignment="Center"
                                            Margin="5,10,20,10"/>
                                         <Label Text="{Binding Id}" TextColor="Black"
-                                           FontAttributes="Bold" FontSize="15"
+                                           FontAttributes="Bold" FontSize="12"
                                            HorizontalTextAlignment="Center"
-                                           Margin="-25,10,0,0"/>
+                                           Margin="-25,10,0,0" MinimumWidthRequest="15"/>
                                         <Label Text="{Binding Name}"
                                    TextColor="Black"
                                    HorizontalTextAlignment="Center"
                                    FontAttributes="Bold" 
                                    FontSize="15"
-                                   Margin="20,10,20,10"/>
-                                        <Label Text="{Binding Description}"
+                                   Margin="10"/>
+                                        
+                                        <ImageButton x:Name="quizButton" Source="quiz2.png"
+                                            HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"
+                                            Clicked="OnQuizClicked" BackgroundColor="#FDDA8A" CornerRadius="20"
+                                            WidthRequest="40" HeightRequest="40" Margin="5"/>
+                                    </StackLayout>
+                                    <Label Text="{Binding Description}"
                                    TextColor="Black"
                                    HorizontalTextAlignment="Center"
                                    VerticalTextAlignment="Center"
                                    FontAttributes="Italic" 
                                    FontSize="10"
-                                   Margin="10"/>
-                                        <ImageButton x:Name="quizButton" Source="quiz2.png"
-                                            HorizontalOptions="EndAndExpand" VerticalOptions="CenterAndExpand"
-                                            Clicked="OnQuizClicked" BackgroundColor="#FDDA8A" CornerRadius="20"
-                                            WidthRequest="70" HeightRequest="70" Margin="3"/>
-                                    </StackLayout>
+                                   Margin="5"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
