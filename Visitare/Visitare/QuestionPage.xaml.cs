@@ -51,10 +51,12 @@ namespace Visitare
                 HttpClient client = new HttpClient();
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                 var result = await client.PostAsync("http://dearjean.ddns.net:44301/api/AnswerAndQuestion2", content);
-                if (result.StatusCode == HttpStatusCode.OK)
-                    await DisplayAlert("Błąd", "Nie masz odpowiednich uprawnień na kreatora! Skontaktuj się z administratorem", "Anuluj");
-                else
+                if (result.StatusCode == HttpStatusCode.Created)
                     await DisplayAlert("Sukces", "Dodanie zagadki do Trasy przebiegło pomyślnie", "Ok");
+                else if (result.StatusCode == HttpStatusCode.Unauthorized)
+                    await DisplayAlert("Błąd", "Nie masz odpowiednich uprawnień na kreatora! Skontaktuj się z administratorem", "Anuluj");
+                else if (result.StatusCode == HttpStatusCode.NotFound)
+                    await DisplayAlert("Błąd", "Trasa o podanum numerze nie istnieje", "Anuluj");
             }
             catch (Exception ex)
             {
